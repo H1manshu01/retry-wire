@@ -1,0 +1,79 @@
+{
+  "name": "retry-wire",
+  "version": "0.1.0",
+  "description": "Provider-aware retry and throttle for LLM API calls — a tiny, zero-dependency wrapper around fetch or any async call that understands OpenAI and Anthropic rate-limit semantics (429, 529 overloaded, Retry-After, x-ratelimit-*).",
+  "type": "module",
+  "license": "MIT",
+  "author": "Himanshu Sharma",
+  "sideEffects": false,
+  "keywords": [
+    "retry",
+    "backoff",
+    "rate-limit",
+    "throttle",
+    "fetch",
+    "resilience",
+    "llm",
+    "ai",
+    "openai",
+    "anthropic",
+    "429",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H1manshu01/retry-wire.git"
+  },
+  "homepage": "https://github.com/H1manshu01/retry-wire#readme",
+  "bugs": {
+    "url": "https://github.com/H1manshu01/retry-wire/issues"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "size": "size-limit",
+    "smoke": "node scripts/smoke.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@size-limit/preset-small-lib": "^11.1.6",
+    "@types/node": "^22.20.5",
+    "size-limit": "^11.1.6",
+    "tsup": "^8.5.1",
+    "tsx": "^4.23.15",
+    "typescript": "^5.7.2",
+    "vitest": "^4.1.11"
+  },
+  "overrides": {
+    "esbuild": "^0.28.2",
+    "vite": "^6.4.4"
+  },
+  "size-limit": [
+    {
+      "name": "core (withResilience + retryFetch)",
+      "path": "dist/index.js",
+      "limit": "3 kB"
+    }
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}

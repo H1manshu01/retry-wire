@@ -82,8 +82,10 @@ for await (const event of sse("https://api.openai.com/v1/chat/completions", {
 [`sse-wire`](https://www.npmjs.com/package/sse-wire) (fetch-based SSE),
 [`trickle-json`](https://www.npmjs.com/package/trickle-json) (streaming partial-JSON parse),
 [`coerce-json`](https://www.npmjs.com/package/coerce-json) (schema repair/coercion),
-[`trickle-react`](https://www.npmjs.com/package/trickle-react) (React bindings), and
-[`expect-llm`](https://www.npmjs.com/package/expect-llm) (LLM output assertions).
+[`trickle-react`](https://www.npmjs.com/package/trickle-react) (React bindings),
+[`expect-llm`](https://www.npmjs.com/package/expect-llm) (LLM output assertions),
+[`context-budgeter`](https://www.npmjs.com/package/context-budgeter) (fit a history into the context window), and
+[`trickle-structured`](https://www.npmjs.com/package/trickle-structured) (the capstone: one call from `fetch` to a validated object).
 Each is zero-dependency and useful on its own.
 
 ## Install

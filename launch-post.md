@@ -1,9 +1,10 @@
 ---
 title: "Make your LLM calls survive 429s and overloads, with any client"
-published: false
+published: true
 description: "LLM endpoints fail with 429s, Anthropic 529 overloads, and Retry-After headers that generic retry libraries don't model — and the official SDKs weld that logic to their own client. retry-wire is a zero-dependency, provider-aware retry and throttle you can wrap around any fetch or any async call."
 tags: typescript, ai, opensource, webdev
 cover_image: https://raw.githubusercontent.com/H1manshu01/retry-wire/main/assets/cover.png
+canonical_url: https://dev.to/h1manshu01/make-your-llm-calls-survive-429s-and-overloads-with-any-client-2lc0
 ---
 
 You ship an LLM feature. It works. Then, in production, you start seeing this:
